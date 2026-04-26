@@ -1,0 +1,60 @@
+[project]
+name = "rag-system"
+version = "0.1.0"
+description = "Reference implementations for multiple retrieval augmented generation workflows."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faiss-cpu>=1.13.2",
+    "langchain>=1.2.0",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.5",
+    "langchain-ollama>=1.0.1",
+    "langchain-openai>=1.1.6",
+    "llm-factory",
+    "openai>=2.14.0",
+    "pydantic-settings>=2.12.0",
+    "pypdf>=6.5.0",
+    "sentence-transformers>=5.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.9",
+]
+
+[project.scripts]
+chat-with-any-doc = "app.cli.chat_with_any_doc:main"
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+    "SIM",
+    "ANN",
+    "N",
+    "RUF",
+    "C90",
+]
+
+ignore = ["ANN401"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.uv.sources]
+llm-factory = { git = "https://github.com/shashankbiet/llm-factory" }

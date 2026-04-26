@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchain-core
+langchain-openai
+langchain-ollama
+openai
+pypdf
+faiss-cpu
+sentence-transformers
+
+# llm-factory
+git+https://github.com/shashankbiet/llm-factory

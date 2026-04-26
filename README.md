@@ -68,6 +68,63 @@ Notes:
 - Rebuilds the vector index on every run.
 - Does not persist embeddings or retrieved context.
 
+### Chat With YouTube Video
+
+Ask questions over a YouTube video transcript using transcript fetching, chunking, embeddings, FAISS retrieval, and a local chat model.
+
+Package:
+
+```text
+src/chat_with_youtube_video/
+```
+
+CLI entrypoint:
+
+```text
+src/app/cli/chat_with_youtube_video.py
+```
+
+Run:
+
+```bash
+uv run chat-with-youtube-video "<youtube-video-id-or-url>"
+```
+
+Input:
+
+```text
+YouTube video ID or URL
+```
+
+Workflow:
+
+```text
+YouTube video ID or URL
+  ↓
+Transcript fetcher
+  ↓
+Text splitter
+  ↓
+Embedding model
+  ↓
+FAISS vector store
+  ↓
+Retriever
+  ↓
+Prompt + retrieved transcript context
+  ↓
+Chat model
+  ↓
+Answer
+```
+
+Notes:
+
+- Requires captions or transcript availability for the video.
+- Uses an in-memory FAISS index.
+- Rebuilds the vector index on every run.
+- Does not persist transcripts, embeddings, or retrieved context.
+
 
 ## Repository Layout
 

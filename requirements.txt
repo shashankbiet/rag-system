@@ -10,3 +10,6 @@ sentence-transformers
 
 # llm-factory
 git+https://github.com/shashankbiet/llm-factory
+
+# youtube transcript
+youtube-transcript-api

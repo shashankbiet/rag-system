@@ -16,6 +16,7 @@ dependencies = [
     "pydantic-settings>=2.12.0",
     "pypdf>=6.5.0",
     "sentence-transformers>=5.2.0",
+    "youtube-transcript-api>=1.2.4",
 ]
 
 [dependency-groups]
@@ -25,6 +26,7 @@ dev = [
 
 [project.scripts]
 chat-with-any-doc = "app.cli.chat_with_any_doc:main"
+chat-with-youtube-video = "app.cli.chat_with_youtube_video:main"
 
 [build-system]
 requires = ["setuptools>=80"]
